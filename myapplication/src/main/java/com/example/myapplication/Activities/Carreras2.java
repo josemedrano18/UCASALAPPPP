@@ -28,12 +28,12 @@ public class Carreras2 extends AppCompatActivity
 
 
 
-        recyclerView = (RecyclerView) findViewById(R.id.reciclador);
+        recyclerView = findViewById(R.id.reciclador);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         adapter = new AdaptadorDeCostos(this);
         recyclerView.setAdapter(adapter);
-        emptyView = (TextView) findViewById(R.id.recyclerview_data_empty);
+        emptyView = findViewById(R.id.recyclerview_data_empty);
 
         getSupportLoaderManager().initLoader(0, null, this);
 

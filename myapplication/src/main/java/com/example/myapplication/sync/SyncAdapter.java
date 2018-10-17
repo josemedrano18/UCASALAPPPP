@@ -98,7 +98,7 @@ public class SyncAdapter extends AbstractThreadedSyncAdapter {
     }
 
     @Override
-    public void onPerformSync(Account account,
+    public  void onPerformSync(Account account,
                               Bundle extras,
                               String authority,
                               ContentProviderClient provider,
@@ -307,7 +307,7 @@ public class SyncAdapter extends AbstractThreadedSyncAdapter {
      * @param response   Respuesta en formato Json obtenida del servidor
      * @param syncResult Registros de la sincronización
      */
-    private void actualizarDatosLocales(JSONObject response, SyncResult syncResult) {
+    public void actualizarDatosLocales(JSONObject response, SyncResult syncResult) {
 
         JSONArray gastos = null;
 
@@ -319,7 +319,7 @@ public class SyncAdapter extends AbstractThreadedSyncAdapter {
         }
         // Parsear con Gson
         Carrera[] res = gson.fromJson(gastos != null ? gastos.toString() : null, Carrera[].class);
-        List<Carrera> data = Arrays.asList(res);
+        Carrera[] data = res;
 
         // Lista para recolección de operaciones pendientes
         ArrayList<ContentProviderOperation> ops = new ArrayList<ContentProviderOperation>();

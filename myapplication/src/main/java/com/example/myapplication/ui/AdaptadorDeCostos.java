@@ -24,9 +24,9 @@ public class AdaptadorDeCostos extends RecyclerView.Adapter<AdaptadorDeCostos.Ex
 
         public ExpenseViewHolder(View v) {
             super(v);
-            nom_carrera = (TextView)  v.findViewById(R.id.nom_carrera);
-            duracion = (TextView)  v.findViewById(R.id.duracion);
-            eje_carrera =(TextView)  v.findViewById(R.id.eje_carrera);
+            nom_carrera = v.findViewById(R.id.nom_carrera);
+            duracion = v.findViewById(R.id.duracion);
+            eje_carrera = v.findViewById(R.id.eje_carrera);
 
 
         }

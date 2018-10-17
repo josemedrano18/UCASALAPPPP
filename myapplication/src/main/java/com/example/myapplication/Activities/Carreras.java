@@ -26,7 +26,7 @@ public class Carreras extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_carreras);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab;
@@ -38,7 +38,7 @@ public class Carreras extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });*/
-     expLV = (ExpandableListView) findViewById(R.id.expLV);
+     expLV = findViewById(R.id.expLV);
      listFacultad = new ArrayList<>();
      mapChild = new HashMap<>();
      cargarDatos();

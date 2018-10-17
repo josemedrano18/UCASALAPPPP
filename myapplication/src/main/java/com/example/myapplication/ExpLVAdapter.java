@@ -65,7 +65,7 @@ public class ExpLVAdapter extends BaseExpandableListAdapter {
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
        String tituloFacultad = (String) getGroup(groupPosition);
         convertView = LayoutInflater.from(context).inflate(R.layout.elv_group,null);
-        TextView tvGroup = (TextView)convertView.findViewById(R.id.tvGroup);
+        TextView tvGroup = convertView.findViewById(R.id.tvGroup);
         tvGroup.setText(tituloFacultad);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -79,7 +79,7 @@ public class ExpLVAdapter extends BaseExpandableListAdapter {
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
         String item = (String) getChild(groupPosition,childPosition);
         convertView = LayoutInflater.from(context).inflate(R.layout.elv_child,null);
-        TextView tvChild = (TextView) convertView.findViewById(R.id.tvChild);
+        TextView tvChild = convertView.findViewById(R.id.tvChild);
         tvChild.setText(item);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {

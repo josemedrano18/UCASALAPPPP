@@ -29,7 +29,7 @@ public class Contacto extends AppCompatActivity {
                 showMenu();
             }
         });*/
-        ListView lv= (ListView)findViewById(R.id.listContacto);
+        ListView lv= findViewById(R.id.listContacto);
                 lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position,

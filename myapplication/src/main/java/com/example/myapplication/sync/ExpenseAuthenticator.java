@@ -22,7 +22,7 @@ public class ExpenseAuthenticator extends AbstractAccountAuthenticator{
             String s,
             String s2,
             String[] strings,
-            Bundle bundle) throws NetworkErrorException {
+            Bundle bundle) {
         return null;
     }
 
@@ -30,7 +30,7 @@ public class ExpenseAuthenticator extends AbstractAccountAuthenticator{
     public Bundle confirmCredentials(
             AccountAuthenticatorResponse r,
             Account account,
-            Bundle bundle) throws NetworkErrorException {
+            Bundle bundle) {
         return null;
     }
 
@@ -39,7 +39,7 @@ public class ExpenseAuthenticator extends AbstractAccountAuthenticator{
             AccountAuthenticatorResponse r,
             Account account,
             String s,
-            Bundle bundle) throws NetworkErrorException {
+            Bundle bundle) {
         throw new UnsupportedOperationException();
     }
 
@@ -52,14 +52,14 @@ public class ExpenseAuthenticator extends AbstractAccountAuthenticator{
     public Bundle updateCredentials(
             AccountAuthenticatorResponse r,
             Account account,
-            String s, Bundle bundle) throws NetworkErrorException {
+            String s, Bundle bundle) {
         throw new UnsupportedOperationException();
     }
 
     @Override
     public Bundle hasFeatures(
             AccountAuthenticatorResponse r,
-            Account account, String[] strings) throws NetworkErrorException {
+            Account account, String[] strings) {
         throw new UnsupportedOperationException();
     }
 }
