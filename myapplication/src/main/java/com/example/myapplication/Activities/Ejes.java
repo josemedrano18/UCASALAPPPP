@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -21,37 +20,35 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Carreras extends AppCompatActivity {
-    private final String TAG= "Carreras";
+public class Ejes extends AppCompatActivity {
+    private final String TAG= "MainActivity";
     private RecyclerView recyclerView;
     private LinearLayoutManager layoutManager;
-    private RecyclerViewAdapterCarreras adapter;
+    private RecyclerViewAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_carreras);
-        String ejetematico= getIntent().getStringExtra("EJE_TEMATICO");
-        Toast.makeText(this, "Clickeaste "+ ejetematico, Toast.LENGTH_LONG).show();
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_viewcarreras);
+        setContentView(R.layout.activity_ejes);
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.addItemDecoration(new SimpleDividerItemDecoration(this));
-        layoutManager = new LinearLayoutManager(Carreras.this);
+        layoutManager = new LinearLayoutManager(Ejes.this);
         recyclerView.setLayoutManager(layoutManager);
-        requestJsonObject(ejetematico);
+        requestJsonObject();
     }
-    private void requestJsonObject(String ejetematico)
+    private void requestJsonObject()
     {
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "http://192.168.1.8:8080/ucasal/obtener_carreras.php?nomeje=" + ejetematico;
+        String url = "http://192.168.1.8:8080/ucasal/obtener_ejes.php";
         StringRequest stringRequest= new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Log.d(TAG, "Response " + response);
                 GsonBuilder builder = new GsonBuilder();
                 Gson mGson = builder.create();
-                List<ItemObjectCarreras> posts = new ArrayList<ItemObjectCarreras>();
-                posts = Arrays.asList(mGson.fromJson(response, ItemObjectCarreras[].class));
+                List<ItemObject> posts = new ArrayList<ItemObject>();
+                posts = Arrays.asList(mGson.fromJson(response, ItemObject[].class));
 //                ItemObject posts = mGson.fromJson(response, ItemObject.class);
-                adapter = new RecyclerViewAdapterCarreras(Carreras.this, posts);
+                adapter = new RecyclerViewAdapter(Ejes.this, posts);
                 recyclerView.setAdapter(adapter);
 
             }
@@ -65,4 +62,6 @@ public class Carreras extends AppCompatActivity {
         queue.add(stringRequest);
 
     }
+
 }
+

@@ -29,13 +29,17 @@
         android:baselineAligned="false"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:text="@string/nav_header_title"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/colorIcons"/>
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:baselineAligned="false"
-        android:text="@string/nav_header_subtitle" />
+        android:text="@string/nav_header_subtitle"
+        android:textColor="@color/colorIcons"/>
+
+
 
 </LinearLayout>

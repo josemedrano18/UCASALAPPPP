@@ -1,6 +1,7 @@
 package com.example.myapplication.Activities;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
+        //FloatingActionButton fab = findViewById(R.id.fab);
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -76,11 +77,12 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_carreras) {
-            Intent intent = new Intent(MainActivity.this, Carreras3.class);
+            Intent intent = new Intent(MainActivity.this, Ejes.class);
             startActivity(intent);
 
         } else if (id == R.id.nav_sedes) {
-            Intent intent = new Intent(MainActivity.this, Sedes.class);
+            Uri uri = Uri.parse("http://www.ucasal.edu.ar/htm/mapa/sedes.htm");
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
         }
          else if (id == R.id.nav_contacto)

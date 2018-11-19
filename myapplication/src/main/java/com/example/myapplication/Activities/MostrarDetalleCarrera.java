@@ -1,7 +1,7 @@
 package com.example.myapplication.Activities;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -21,37 +21,38 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Carreras extends AppCompatActivity {
-    private final String TAG= "Carreras";
+public class MostrarDetalleCarrera extends AppCompatActivity {
+    private final String TAG= "DetalleCarrera";
     private RecyclerView recyclerView;
     private LinearLayoutManager layoutManager;
-    private RecyclerViewAdapterCarreras adapter;
+    private DetalleCarreraAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_carreras);
-        String ejetematico= getIntent().getStringExtra("EJE_TEMATICO");
-        Toast.makeText(this, "Clickeaste "+ ejetematico, Toast.LENGTH_LONG).show();
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_viewcarreras);
+        setContentView(R.layout.activity_detalle_carrera);
+        String nomcarrera= getIntent().getStringExtra("NOM_CARRERA");
+        recyclerView = (RecyclerView) findViewById(R.id.recylcerViewDetalleCarrera);
         recyclerView.addItemDecoration(new SimpleDividerItemDecoration(this));
-        layoutManager = new LinearLayoutManager(Carreras.this);
+        layoutManager = new LinearLayoutManager( MostrarDetalleCarrera.this);
         recyclerView.setLayoutManager(layoutManager);
-        requestJsonObject(ejetematico);
+        Toast.makeText(this, "Clickeaste "+ nomcarrera, Toast.LENGTH_LONG).show();
+        requestJsonObject(nomcarrera);
     }
-    private void requestJsonObject(String ejetematico)
+    private void requestJsonObject(String nomcarrera)
     {
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "http://192.168.1.8:8080/ucasal/obtener_carreras.php?nomeje=" + ejetematico;
+        String url = "http://192.168.1.8:8080/ucasal/obtener_detalle_carrera.php?nomcarrera=" + nomcarrera;
+        url= url.replaceAll(" ", "%20");
         StringRequest stringRequest= new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Log.d(TAG, "Response " + response);
                 GsonBuilder builder = new GsonBuilder();
                 Gson mGson = builder.create();
-                List<ItemObjectCarreras> posts = new ArrayList<ItemObjectCarreras>();
-                posts = Arrays.asList(mGson.fromJson(response, ItemObjectCarreras[].class));
+                List<DetalleCarrera> posts = new ArrayList<DetalleCarrera>();
+                posts = Arrays.asList(mGson.fromJson(response, DetalleCarrera[].class));
 //                ItemObject posts = mGson.fromJson(response, ItemObject.class);
-                adapter = new RecyclerViewAdapterCarreras(Carreras.this, posts);
+                adapter = new DetalleCarreraAdapter(MostrarDetalleCarrera.this, posts);
                 recyclerView.setAdapter(adapter);
 
             }

@@ -43,10 +43,5 @@
     <string name="requisitos_title">Requisitos</string>
     <string name="curso_title">Curso</string>
 
-    <string-array name="ejestematicos">
-        <item>Ciecnias Sociales</item>
-        <item>Ciencias Jurídicas</item>
-        <item>Ciencias Exactas</item>
-    </string-array>
 
 </resources>

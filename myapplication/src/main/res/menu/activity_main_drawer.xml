@@ -19,10 +19,6 @@
                 android:id="@+id/nav_contacto"
                 android:icon="@drawable/ic_menu_contacto"
                 android:title="Contacto" />
-            <item
-                android:id="@+id/nav_preinscripcion"
-                android:icon="@drawable/ic_menu_preinscripcion"
-                android:title="Preinscripción" />
         </menu>
     </item>
 </menu>

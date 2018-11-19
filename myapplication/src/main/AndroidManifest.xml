@@ -10,11 +10,13 @@
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <!-- Autenticación -->
     <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
     <!-- Sincronización -->
     <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
     <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -23,35 +25,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-
-        <provider android:name="com.example.myapplication.provider.ProviderDeCarreras"
-            android:authorities="com.example.myapplication"
-            android:enabled="true"
-            android:exported="true" >
-        </provider>
-
-        <!-- SERVICIO DE AUTENTICACIÓN -->
-        <service android:name=".sync.AuthenticationService">
-            <intent-filter>
-                <action android:name="android.accounts.AccountAuthenticator" />
-            </intent-filter>
-
-            <meta-data
-                android:name="android.accounts.AccountAuthenticator"
-                android:resource="@xml/authenticator" />
-        </service>
-        <!-- SERVICIO DE SINCRONIZACIÓN -->
-        <service
-            android:name=".sync.SyncService"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.content.SyncAdapter" />
-            </intent-filter>
-
-            <meta-data
-                android:name="android.content.SyncAdapter"
-                android:resource="@xml/sync_adapter" />
-        </service>
         <activity
             android:name=".Activities.MainActivity"
             android:label="@string/app_name"
@@ -77,17 +50,10 @@
         <activity
             android:name=".Activities.Sedes"
             android:label="@string/title_activity_sedes" />
-        <activity
-            android:name=".Activities.Carreras"
-            android:label="@string/title_activity_contacto"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Activities.DescripcionCarrera"
-            android:label="@string/title_activity_descripcion_carrera"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Activities.Contacto" />
-        <activity android:name=".Activities.Carreras2" />
-        <activity android:name=".Activities.Carreras3"></activity>
+        <activity android:name=".Activities.Ejes" />
+        <activity android:name=".Activities.Carreras" />
+        <activity android:name=".Activities.MostrarDetalleCarrera" />
+        <activity android:name=".Activities.Contacto"></activity>
     </application>
 
 </manifest>
