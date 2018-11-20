@@ -8,6 +8,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.button.MaterialButton;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
@@ -32,6 +33,7 @@ public class Contacto extends AppCompatActivity {
         Button button = (Button) findViewById(R.id.button);
         Button button3 = (Button) findViewById(R.id.button3);
         Button button2 = (Button) findViewById(R.id.button2);
+      MaterialButton button4 = (MaterialButton) findViewById(R.id.material1);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         button.setOnClickListener(new View.OnClickListener() {
             @Override

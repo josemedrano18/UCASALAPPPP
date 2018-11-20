@@ -8,6 +8,24 @@
     tools:context=".Activities.Contacto"
     tools:showIn="@layout/activity_contacto">
 
+
+    <android.support.design.button.MaterialButton
+        android:id="@+id/material1"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="92dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="260dp"
+        android:minWidth="200dp"
+        android:text="Messages"
+        app:backgroundTint="@color/colorAccent"
+        app:icon="@drawable/ic_call"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
     <Button
         android:id="@+id/button"
         style="@style/Widget.AppCompat.Button.Borderless"
@@ -30,7 +48,7 @@
         android:text="Compartir Carrera"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Compartir Carrera" />
