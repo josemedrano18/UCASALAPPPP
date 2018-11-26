@@ -41,7 +41,7 @@ public class Carreras extends AppCompatActivity {
     private void requestJsonObject(String ejetematico)
     {
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "http://192.168.1.8:8080/ucasal/obtener_carreras.php?nomeje=" + ejetematico;
+        String url = "http://192.168.100.3:8080/ucasal/obtener_carreras.php?nomeje=" + ejetematico;
         StringRequest stringRequest= new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {

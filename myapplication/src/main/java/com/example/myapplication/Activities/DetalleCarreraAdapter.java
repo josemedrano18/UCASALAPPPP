@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.myapplication.R;
@@ -45,7 +46,7 @@ public class DetalleCarreraAdapter extends RecyclerView.Adapter<DetalleCarreraAd
         return detalleList.size();
     }
 
-    class DetalleCarreraViewHolder extends RecyclerView.ViewHolder {
+    class DetalleCarreraViewHolder extends  RecyclerView.ViewHolder {
 
         TextView textViewTitulo, textViewDuracion, textViewSalida, textViewPerfil,textviewRequisitos,textviewCurso,textviewPlan;
 

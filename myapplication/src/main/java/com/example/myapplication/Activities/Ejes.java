@@ -38,7 +38,7 @@ public class Ejes extends AppCompatActivity {
     private void requestJsonObject()
     {
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "http://192.168.1.8:8080/ucasal/obtener_ejes.php";
+        String url = "http://192.168.100.3:8080/ucasal/obtener_ejes.php";
         StringRequest stringRequest= new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
