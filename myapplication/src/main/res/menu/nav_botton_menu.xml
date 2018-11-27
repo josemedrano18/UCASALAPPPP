@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:title="Home"
+    android:id="@+id/action_home"
+    android:icon="@drawable/ic_home"/>
+
+    <item android:title="Sedes"
+        android:id="@+id/action_sedes"
+        android:icon="@drawable/ic_sedes"/>
+    <item android:title="Contacto"
+        android:id="@+id/action_contacto"
+        android:icon="@drawable/ic_call"/>
+</menu>

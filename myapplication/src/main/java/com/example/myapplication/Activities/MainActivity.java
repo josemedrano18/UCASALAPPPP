@@ -3,6 +3,8 @@ package com.example.myapplication.Activities;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -35,6 +37,30 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_nav_view);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()){
+                    case R.id.action_sedes:
+                        Uri uri = Uri.parse("http://www.ucasal.edu.ar/htm/mapa/sedes.htm");
+                        Intent intent1 = new Intent(Intent.ACTION_VIEW, uri);
+                        startActivity(intent1);
+                        break;
+                    //case R.id.action_home:
+                      //  Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                       // startActivity(intent);
+                      //  break;
+                    case R.id.action_contacto:
+                        Intent intent2 = new Intent(MainActivity.this, Contacto.class);
+                        startActivity(intent2);
+                        break;
+                }
+
+                return false;
+            }
+        });
     }
 
     @Override
@@ -90,21 +116,9 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(MainActivity.this, Contacto.class);
             startActivity(intent);
         }
-//         else if (id == R.id.nav_contacto) {
-//            fragment = new ContactoFragment();
-//            fragmentTransaction =true;
-////if (fragmentTransaction) {
-////    getSupportFragmentManager()
-////            .beginTransaction()
-////            .replace(R.id.content_frame, fragment)
-////            .commit();
-////    item.setChecked(true);
-////    getSupportActionBar().setTitle(item.getTitle());
-////    DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-////    drawer.closeDrawer(GravityCompat.START);
-////}
+
         return true;
-//    }
+
     }
 
 

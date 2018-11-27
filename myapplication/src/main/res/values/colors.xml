@@ -12,6 +12,6 @@
          <color name="CelesteOscuro">#81bef7</color>
          <color name = "RojoClaro">#FE2E2E</color>
          <color name = "Beige">#F3E2A9</color>
-
+    <color name = "Gris"> #A4A4A4 </color>
 
      </resources>

@@ -24,7 +24,7 @@ public class DetalleCarreraAdapter extends RecyclerView.Adapter<DetalleCarreraAd
     @Override
     public DetalleCarreraViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(mCtx);
-        View view = inflater.inflate(R.layout.detalle_carrera, null);
+       View view = inflater.inflate(R.layout.detalle_carrera, null);
         return new DetalleCarreraViewHolder(view);
     }
 

@@ -39,6 +39,7 @@ public class Ejes extends AppCompatActivity {
     {
         RequestQueue queue = Volley.newRequestQueue(this);
         String url = "http://192.168.100.3:8080/ucasal/obtener_ejes.php";
+        url= url.replaceAll(" ", "%20");
         StringRequest stringRequest= new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {

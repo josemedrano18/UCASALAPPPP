@@ -1,11 +1,15 @@
 package com.example.myapplication.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +36,7 @@ public class MostrarDetalleCarrera extends AppCompatActivity {
   TextView textViewRequisitos;
   TextView textViewCurso;
   TextView textViewPlan;
+  FloatingActionButton buttonCompartir;
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,8 +57,23 @@ public class MostrarDetalleCarrera extends AppCompatActivity {
         textViewRequisitos =(TextView)findViewById(R.id.textViewRequisitos);
         textViewCurso =(TextView)findViewById(R.id.textViewCurso);
         textViewPlan =(TextView)findViewById(R.id.textViewPlan);
+        buttonCompartir = (FloatingActionButton) findViewById(R.id.buttonCompartir);
+        buttonCompartir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CompartirCarrera();
+            }
+        });
 
     }
+    private void CompartirCarrera() {
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_TEXT, "Mirá esta carrera" + textViewTitulo +textViewDuracion+ textViewDuracion + textViewRequisitos+textViewPlan );
+        intent.setPackage("com.whatsapp");
+        startActivity(intent);
+    }
+
     private void requestJsonObject(String nomcarrera)
     {
         RequestQueue queue = Volley.newRequestQueue(this);

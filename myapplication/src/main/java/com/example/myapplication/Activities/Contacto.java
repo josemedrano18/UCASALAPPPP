@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.button.MaterialButton;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
@@ -17,6 +18,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.telephony.PhoneNumberUtils;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -28,27 +30,24 @@ public class Contacto extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contacto);
-       // Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        // Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
-        Button button = (Button) findViewById(R.id.button);
-        Button button3 = (Button) findViewById(R.id.button3);
-        Button button2 = (Button) findViewById(R.id.button2);
-      MaterialButton button4 = (MaterialButton) findViewById(R.id.material1);
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+
+
+
+        MaterialButton button4 = (MaterialButton) findViewById(R.id.Llamar);
+        MaterialButton button = (MaterialButton)findViewById(R.id.Mensaje);
+        MaterialButton fab = (MaterialButton) findViewById(R.id.E_Mail);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 AbrirWhatsApp("693718");
             }
         });
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                CompartirCarrera();
-            }
-        });
 
-        button2.setOnClickListener(new View.OnClickListener() {
+
+        button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Llamar();
@@ -75,6 +74,29 @@ public class Contacto extends AppCompatActivity {
                 } catch (android.content.ActivityNotFoundException e) {
                     Toast.makeText(Contacto.this, "No hay cliente de mail instalado", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+        BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_nav_view);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()){
+                    case R.id.action_sedes:
+                        Uri uri = Uri.parse("http://www.ucasal.edu.ar/htm/mapa/sedes.htm");
+                        Intent intent1 = new Intent(Intent.ACTION_VIEW, uri);
+                        startActivity(intent1);
+                        break;
+                    case R.id.action_home:
+                        Intent intent = new Intent(Contacto.this, MainActivity.class);
+                        startActivity(intent);
+                        break;
+                   // case R.id.action_contacto:
+                     //   Intent intent2 = new Intent(Contacto.this, Contacto.class);
+                       // startActivity(intent2);
+                        //break;
+                }
+
+                return false;
             }
         });
     }
