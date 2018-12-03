@@ -1,21 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ucasalbg"
+    android:background="@drawable/fondo7"
     tools:context="com.example.myapplication.Activities.MostrarDetalleCarrera">
 
-    <RelativeLayout
-        android:layout_width="445dp"
-        android:layout_height="513dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/bottom_nav_view3"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonCompartir"
+            app:menu="@menu/nav_botton_menu"></android.support.design.widget.BottomNavigationView>
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/buttonCompartir"
@@ -23,152 +28,378 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="74dp"
-            android:layout_marginBottom="23dp"
+
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
             android:clickable="true"
+            android:tint="@color/design_default_color_primary"
+            app:backgroundTint="@color/CelesteOscuro"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardViewPlanEstudio"
+            app:rippleColor="@color/colorDivider"
             app:srcCompat="@drawable/ic_menu_share" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="47dp"
-            android:layout_marginTop="39dp"
-            android:text="Título:" />
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardViewDuracion"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="47dp"
-            android:layout_marginTop="95dp"
-            android:text="Duración:" />
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_above="@+id/cardViewPerfil"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="47dp"
-            android:layout_marginTop="151dp"
-            android:text="Salida:" />
+            android:layout_marginTop="2dp"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/colorIcons"
+            app:cardCornerRadius="@dimen/activity_vertical_margin"
+            app:cardElevation="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardViewTitulo">
 
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="start"
+                    android:text="Duración"
+
+                    android:textColor="@color/CelesteOscuro"
+                    android:textSize="23dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewDuracion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView3"
+                    android:layout_marginLeft="5dp"
+
+                    android:gravity="start"
+                    android:text="Cargando"
+                    android:textColor="@color/colorSecondaryText"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardViewPerfil"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
+            android:layout_above="@+id/cardViewSalida"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="2dp"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/colorIcons"
+            app:cardCornerRadius="@dimen/activity_vertical_margin"
+            app:cardElevation="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardViewDuracion">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="start"
+                    android:text="Perfil Laboral"
+
+                    android:textColor="@color/CelesteOscuro"
+                    android:textSize="23dp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/textViewPerfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView10"
+                    android:layout_marginLeft="5dp"
+
+                    android:gravity="start"
+                    android:text="Cargando"
+                    android:textColor="@color/colorSecondaryText"
+                    android:textSize="18dp" />
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardViewSalida"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_above="@+id/cardViewRequisitos"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="2dp"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/colorIcons"
+            app:cardCornerRadius="@dimen/activity_vertical_margin"
+            app:cardElevation="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardViewPerfil">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/cardViewSalida">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="start"
+                    android:text="Salida"
+
+                    android:textColor="@color/CelesteOscuro"
+                    android:textSize="23dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewSalida"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView4"
+                    android:layout_marginLeft="5dp"
+
+                    android:gravity="start"
+                    android:text="Cargando"
+                    android:textColor="@color/colorSecondaryText"
+                    android:textSize="18dp" />
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardViewCurso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_above="@+id/cardViewPlanEstudio"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="2dp"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/colorIcons"
+            app:cardCornerRadius="@dimen/activity_vertical_margin"
+            app:cardElevation="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardViewRequisitos">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="start"
+                    android:text="Curso de ingreso"
+                    android:textColor="@color/CelesteOscuro"
+                    android:textSize="23dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewCurso"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView7"
+                    android:layout_marginLeft="5dp"
+
+                    android:gravity="start"
+                    android:text="Cargando"
+                    android:textColor="@color/colorSecondaryText"
+                    android:textSize="18dp" />
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardViewRequisitos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/cardViewCurso"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="2dp"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/colorIcons"
+            app:cardCornerRadius="@dimen/activity_vertical_margin"
+            app:cardElevation="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardViewSalida">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="start"
+                    android:text="Requisitos"
+                    android:textColor="@color/CelesteOscuro"
+                    android:textSize="23dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewRequisitos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView6"
+                    android:layout_marginLeft="5dp"
+
+                    android:gravity="start"
+                    android:text="Cargando"
+                    android:textColor="@color/colorSecondaryText"
+                    android:textSize="18dp" />
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardViewPlanEstudio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="47dp"
-            android:layout_marginBottom="229dp"
-            android:text="Requisitos:" />
+            android:layout_marginTop="2dp"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/colorIcons"
+            app:cardCornerRadius="@dimen/activity_vertical_margin"
+            app:cardElevation="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardViewCurso">
 
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/cardViewPlanEstudio">
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="start"
+                    android:text="Plan de estudio"
+
+                    android:textColor="@color/CelesteOscuro"
+                    android:textSize="23dp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/textViewPlan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView8"
+                    android:layout_marginLeft="5dp"
+                    android:autoLink="web"
+                    android:gravity="start"
+                    android:text="Cargando"
+                    android:textColor="@color/colorSecondaryText"
+                    android:textSize="18dp" />
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardViewTitulo"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="47dp"
-            android:layout_marginBottom="173dp"
-            android:text="Curso de ingreso:" />
 
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="47dp"
-            android:layout_marginBottom="117dp"
-            android:text="Plan de estudio" />
+            android:layout_above="@+id/cardViewDuracion"
+            android:layout_marginTop="5dp"
+            app:cardBackgroundColor="@color/colorIcons"
+            app:cardCornerRadius="@dimen/activity_vertical_margin"
+            app:cardElevation="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="47dp"
-            android:layout_marginTop="207dp"
-            android:text="Perfil laboral:" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/cardViewTitulo"
+                android:layout_alignTop="@+id/cardViewTitulo">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="start"
+                    android:text="Título"
+                    android:textColor="@color/CelesteOscuro"
+                    android:textSize="23dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewTitulo"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView2"
+                    android:layout_marginLeft="5dp"
+
+                    android:layout_marginTop="0dp"
+                    android:gravity="start"
+                    android:text="Cargando"
+                    android:textColor="@color/colorSecondaryText"
+                    android:textSize="18dp" />
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
 
 
-        <TextView
-            android:id="@+id/textViewTitulo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="155dp"
-            android:layout_marginTop="39dp"
-            android:text="Cargando" />
+    </android.support.constraint.ConstraintLayout>
+    </ScrollView>
 
-        <TextView
-            android:id="@+id/textViewDuracion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="155dp"
-            android:layout_marginTop="95dp"
-            android:text="Cargando" />
-
-        <TextView
-            android:id="@+id/textViewSalida"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="155dp"
-            android:layout_marginTop="151dp"
-            android:text="Cargando" />
-
-        <TextView
-            android:id="@+id/textViewRequisitos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="155dp"
-            android:layout_marginBottom="229dp"
-            android:text="Cargando" />
-
-        <TextView
-            android:id="@+id/textViewCurso"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="155dp"
-            android:layout_marginBottom="173dp"
-            android:text="Cargando" />
-
-        <TextView
-            android:id="@+id/textViewPlan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="155dp"
-            android:layout_marginBottom="117dp"
-            android:text="Cargando" />
-
-        <TextView
-            android:id="@+id/textViewPerfil"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="155dp"
-            android:layout_marginTop="207dp"
-            android:text="Cargando" />
-
-    </RelativeLayout>
-
-</android.support.constraint.ConstraintLayout>

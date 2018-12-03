@@ -10,8 +10,12 @@
             android:title="Carreras" />
         <item
             android:id="@+id/nav_sedes"
-            android:icon="@drawable/ic_menu_sedes"
+            android:icon="@drawable/ic_sedes"
             android:title="Sedes" />
+        <item
+            android:id="@+id/nav_recorrido"
+            android:icon="@drawable/ic_menu_sedes"
+            android:title="Recorrido Virtual" />
     </group>
     <item android:title="Comunicate">
         <menu>

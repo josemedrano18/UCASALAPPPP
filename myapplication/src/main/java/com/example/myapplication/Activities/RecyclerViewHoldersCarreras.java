@@ -1,5 +1,6 @@
 package com.example.myapplication.Activities;
 
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.RelativeLayout;
@@ -9,12 +10,12 @@ import com.example.myapplication.R;
 
 public class RecyclerViewHoldersCarreras extends RecyclerView.ViewHolder {
     public TextView NomCarrera;
-    public RelativeLayout relativeLayout;
+    public CardView cv;
     public RecyclerViewHoldersCarreras(View itemView)
     {
         super(itemView);
         NomCarrera=(TextView)itemView.findViewById(R.id.nomcarrera);
-        relativeLayout= (RelativeLayout) itemView.findViewById(R.id.RelativeLayoutCarreras);
+        cv= (CardView) itemView.findViewById(R.id.cardViewCarreras);
     }
 
 }

@@ -6,6 +6,7 @@
     <string name="nav_header_subtitle">wwww.ucasal.edu.ar</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="path">http://9b464237.ngrok.io</string>
     <string-array name="arrayContactos" tools:ignore="ExtraTranslation">
         <item>h.</item>
         <item>Información y ayuda</item>

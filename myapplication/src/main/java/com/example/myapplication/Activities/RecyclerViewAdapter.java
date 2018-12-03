@@ -5,6 +5,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
 import com.example.myapplication.R;
 
@@ -31,8 +33,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewHolder
  @Override
  public void onBindViewHolder(final RecyclerViewHolders holder, final int position) {
 
+
      holder.Eje.setText(itemList.get(position).getEje());
-     holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
+     animate(holder);
+     holder.cv.setOnClickListener(new View.OnClickListener() {
          @Override
          public void onClick(View v) {
           //   Toast.makeText(context, "Clickeaste "+ itemList.get(position).getEje(), Toast.LENGTH_LONG).show();
@@ -50,7 +54,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewHolder
   return this.itemList.size();
  }
 
+ public void animate(RecyclerView.ViewHolder viewHolder) {
+        final Animation animAnticipateOvershoot = AnimationUtils.loadAnimation(context, R.anim.anticipate_overshoot_interpolator);
+        viewHolder.itemView.setAnimation(animAnticipateOvershoot);
+    }
+
 }
+
 
 
 

@@ -145,4 +145,10 @@ public class Contacto extends AppCompatActivity {
                 break;
         }
     }
+
+    //@Override
+   // public void finish() {
+   //     super.finish();
+    //    overridePendingTransition(R.anim.slide_out_left,R.anim.slide_in_right );
+   // }
 }

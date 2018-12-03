@@ -3,15 +3,15 @@
          <color name="colorPrimary">#F44336</color>
          <color name="colorPrimaryDark">#D32F2F</color>
          <color name="colorPrimaryLight">#FFCDD2</color>
-         <color name="colorAccent">#687fff</color>
+         <color name="colorAccent">#8f9ef8</color>
          <color name="colorPrimaryText">#212121</color>
-         <color name="colorSecondaryText">#757575</color>
-         <color name="colorIcons">#FFFFFF</color>
-         <color name="colorDivider">#BDBDBD</color>
-         <color name = "Celeste">#CEF6F5</color>
-         <color name="CelesteOscuro">#81bef7</color>
-         <color name = "RojoClaro">#FE2E2E</color>
-         <color name = "Beige">#F3E2A9</color>
-    <color name = "Gris"> #A4A4A4 </color>
+         <color name="colorSecondaryText">#4f4f4f</color>
+         <color name="colorIcons">#ffffff</color>
+         <color name="colorDivider">#bdbdbd</color>
+         <color name = "Celeste">#e7f8f8</color>
+         <color name="CelesteOscuro">#6cb4f7</color>
+         <color name = "RojoClaro">#fe2e2e</color>
+         <color name = "Beige">#f3e2a9</color>
+    <color name = "Gris">#a4a4a4</color>
 
      </resources>

@@ -28,13 +28,7 @@
         <activity
             android:name=".Activities.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -46,14 +40,26 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
 
         <activity
-            android:name=".Activities.Sedes"
+            android:name=".Activities.Recorrido"
             android:label="@string/title_activity_sedes" />
         <activity android:name=".Activities.Ejes" />
         <activity android:name=".Activities.Carreras" />
         <activity android:name=".Activities.MostrarDetalleCarrera" />
-        <activity android:name=".Activities.Contacto"></activity>
+        <activity android:name=".Activities.Contacto" />
+        <activity android:name=".Activities.splash_activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activities.PresencialODistancia" />
+        <activity android:name=".Activities.CarrerasDistancia"></activity>
     </application>
 
 </manifest>

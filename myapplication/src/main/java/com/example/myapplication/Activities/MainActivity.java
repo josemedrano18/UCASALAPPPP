@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity
                         Uri uri = Uri.parse("http://www.ucasal.edu.ar/htm/mapa/sedes.htm");
                         Intent intent1 = new Intent(Intent.ACTION_VIEW, uri);
                         startActivity(intent1);
+
                         break;
                     //case R.id.action_home:
                       //  Intent intent = new Intent(MainActivity.this, MainActivity.class);
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity
                     case R.id.action_contacto:
                         Intent intent2 = new Intent(MainActivity.this, Contacto.class);
                         startActivity(intent2);
+
                         break;
                 }
 
@@ -103,20 +105,27 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_carreras) {
-            Intent intent = new Intent(MainActivity.this, Ejes.class);
+            Intent intent = new Intent(MainActivity.this, PresencialODistancia.class);
             startActivity(intent);
 
         } else if (id == R.id.nav_sedes) {
             Uri uri = Uri.parse("http://www.ucasal.edu.ar/htm/mapa/sedes.htm");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
+
         }
          else if (id == R.id.nav_contacto)
         {
             Intent intent = new Intent(MainActivity.this, Contacto.class);
             startActivity(intent);
-        }
 
+        }
+          else if (id == R.id.nav_recorrido) {
+            Uri uri = Uri.parse("https://www.google.com/maps/@-24.7414387,-65.3925196,3a,15y,90t/data=!3m7!1e1!3m5!1sAF1QipOX1Uk0eOhjBg_8Vc1RIo2tSaB4R0jazccJ7jbr!2e10!3e12!7i6324!8i3162");
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
+
+        }
         return true;
 
     }
